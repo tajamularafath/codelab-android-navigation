@@ -16,11 +16,14 @@
 
 package com.example.android.codelabs.navigation
 
+import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.os.Bundle
 import android.widget.RemoteViews
+import androidx.navigation.NavDeepLink
+import androidx.navigation.NavDeepLinkBuilder
 
 /**
  * App Widget that deep links you to the [DeepLinkFragment].
@@ -39,6 +42,25 @@ class DeepLinkAppWidgetProvider : AppWidgetProvider() {
         val args = Bundle()
         args.putString("myarg", "From Widget")
         // TODO STEP 10 - construct and set a PendingIntent using DeepLinkBuilder
+        val pendingIndent = NavDeepLinkBuilder(context)
+            .setGraph(R.navigation.mobile_navigation)
+            .setDestination(R.id.deeplink_dest)
+            .setArguments(args)
+            .createPendingIntent()
+
+            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
+
+
+      /*  val updatedPendingIntent = PendingIntent.getActivity(
+            applicationContext,
+            NOTIFICATION_REQUEST_CODE,
+            updatedIntent,
+            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT // setting the mutability flag
+        )*/
+
+        remoteViews.setOnClickPendingIntent(R.id.deep_link_button, pendingIndent)
+
+
 //        val pendingIntent = NavDeepLinkBuilder(context)
 //                .setGraph(R.navigation.mobile_navigation)
 //                .setDestination(R.id.deeplink_dest)
