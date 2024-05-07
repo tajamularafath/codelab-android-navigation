@@ -54,6 +54,7 @@ class HomeFragment : Fragment() {
         button?.setOnClickListener {
             findNavController().navigate(R.id.flow_step_one_dest, null,option)
         }
+
         //TODO END STEP 5
 
         //TODO STEP 6 - Set NavOptions
@@ -79,6 +80,8 @@ class HomeFragment : Fragment() {
         view.findViewById<Button>(R.id.navigate_action_button)?.setOnClickListener (
             Navigation.createNavigateOnClickListener(R.id.action_home_dest_to_flow_step_one_dest3,null)
         )
+
+
 //        view.findViewById<Button>(R.id.navigate_action_button)?.setOnClickListener(
 //                Navigation.createNavigateOnClickListener(R.id.next_action, null)
 //        )

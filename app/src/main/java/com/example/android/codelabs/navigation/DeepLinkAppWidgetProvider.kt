@@ -48,7 +48,7 @@ class DeepLinkAppWidgetProvider : AppWidgetProvider() {
             .setArguments(args)
             .createPendingIntent()
 
-            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
+        PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
 
 
       /*  val updatedPendingIntent = PendingIntent.getActivity(

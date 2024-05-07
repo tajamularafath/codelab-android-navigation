@@ -93,9 +93,14 @@
 
         <!-- TODO END STEP 11.1 -->
     </fragment>
+<!--    <fragment-->
+<!--        android:id="@+id/settingsFragment"-->
+<!--        android:name="com.example.android.codelabs.navigation.SettingsFragment"-->
+<!--        android:label="settings_fragment"-->
+<!--        tools:layout="@layout/settings_fragment" />-->
     <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.example.android.codelabs.navigation.SettingsFragment"
-        android:label="settings_fragment"
-        tools:layout="@layout/settings_fragment" />
+        android:id="@+id/shopping_cart"
+        android:name="com.example.android.codelabs.navigation.CartFragment"
+        android:label="Shopping Cart"
+        tools:layout="@layout/fragment_cart" />
 </navigation>
